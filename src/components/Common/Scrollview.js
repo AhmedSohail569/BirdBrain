@@ -42,6 +42,7 @@ const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
     // paddingVertical: 20,
+    paddingHorizontal: 16,
   },
 });
 

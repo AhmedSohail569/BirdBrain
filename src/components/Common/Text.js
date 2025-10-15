@@ -1,6 +1,7 @@
 import React from "react";
 import {Text, StyleSheet, TouchableOpacity} from "react-native";
 import PropTypes from "prop-types";
+import {RFValue} from "react-native-responsive-fontsize";
 
 const AppText = ({
   children,
@@ -78,6 +79,11 @@ const styles = StyleSheet.create({
   subtitle: {
     fontSize: 18,
     fontWeight: "500",
+  },
+  cardTitle: {
+    fontSize: RFValue(14),
+    fontWeight: "500",
+    marginBottom: 10,
   },
   body: {
     fontSize: 16,
