@@ -80,7 +80,6 @@ export default function IntroScreen({navigation}) {
       <View style={styles.footer}>
         <Button
           title={currentIndex === slides.length - 1 ? "Get Started" : "Next"}
-          //   onPress={() => onLogin(email, password)}
           onPress={handleNext}
           style={styles.nextButton}
         />

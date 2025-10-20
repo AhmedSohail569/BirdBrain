@@ -1,7 +1,8 @@
-import React, {useState} from "react";
+import React from "react";
 import {
   View,
   StyleSheet,
+  TextInput,
   TouchableOpacity,
   ImageBackground,
   Image,
@@ -11,15 +12,14 @@ import {RFPercentage, RFValue} from "react-native-responsive-fontsize";
 import Icon from "react-native-vector-icons/Ionicons";
 import {Images} from "~assets";
 import AskBirdBrain from "~components/AskBirdBrain";
-import {Button, Modal, ScrollView, Text, TextInput} from "~components/Common";
+import {ScrollView, Text} from "~components/Common";
 import Header from "~components/Header";
+import {colors} from "~theme/colors";
 
-const CollectionScreen = ({navigation}) => {
-  const [modalVisible, setModalVisible] = useState(false);
-  const [collectionName, setCollectionName] = useState("");
+const AnalysisReportScreen = ({navigation}) => {
   return (
     <View style={styles.container}>
-      <Header variant="home" showShare showSearch />
+      <Header variant="home" />
 
       <ScrollView
         style={styles.scrollContainer}
@@ -33,8 +33,7 @@ const CollectionScreen = ({navigation}) => {
             <View style={{gap: 10}}>
               <View
                 style={{flexDirection: "row", justifyContent: "space-between"}}>
-                <TouchableOpacity
-                  activeOpacity={0.8}
+                <View
                   style={[
                     styles.proImage,
                     {
@@ -44,8 +43,7 @@ const CollectionScreen = ({navigation}) => {
                       borderStyle: "dashed",
                       borderColor: "#0000001A",
                     },
-                  ]}
-                  onPress={() => setModalVisible(true)}>
+                  ]}>
                   <View
                     style={{
                       padding: 15,
@@ -57,7 +55,7 @@ const CollectionScreen = ({navigation}) => {
                   <Text style={{fontWeight: "500", color: "#1B1A1F"}}>
                     Add Collection
                   </Text>
-                </TouchableOpacity>
+                </View>
                 <ImageBackground
                   source={Images.hummingbird}
                   style={styles.proImage}
@@ -330,38 +328,6 @@ const CollectionScreen = ({navigation}) => {
           </View>
         </View>
       </ScrollView>
-
-      <Modal visible={modalVisible} onClose={() => setModalVisible(false)}>
-        <View style={styles.modalContent}>
-          <Text
-            variant="title"
-            style={{
-              fontWeight: "600",
-              fontSize: RFValue(16),
-              marginBottom: 15,
-            }}>
-            Add Collection
-          </Text>
-
-          <TextInput
-            label="Name of your collection"
-            value={collectionName}
-            onChangeText={setCollectionName}
-            placeholder="Type collection name"
-          />
-
-          {/* ✅ Add Button */}
-          <Button
-            title="Save"
-            onPress={() => {
-              console.log("Added:", collectionName);
-              setModalVisible(false);
-              setCollectionName("");
-            }}
-            style={styles.addButton}
-          />
-        </View>
-      </Modal>
     </View>
   );
 };
@@ -374,9 +340,11 @@ const styles = StyleSheet.create({
   scrollContainer: {
     flex: 1,
   },
+
   proContainer: {
     marginTop: 20,
   },
+
   proCard: {
     backgroundColor: "#F7F6F9",
     borderRadius: 20,
@@ -394,6 +362,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     padding: 8,
   },
+
   collectionContainer: {
     padding: 16,
     marginTop: 20,
@@ -445,15 +414,6 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-
-  /** MODAL STYLES **/
-  modalContent: {
-    marginTop: 10,
-    paddingBottom: 20,
-  },
-  addButton: {
-    marginVertical: 10,
-  },
 });
 
-export default CollectionScreen;
+export default AnalysisReportScreen;

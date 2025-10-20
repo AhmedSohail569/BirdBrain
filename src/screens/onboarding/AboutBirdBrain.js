@@ -6,7 +6,7 @@ import {RFPercentage, RFValue} from "react-native-responsive-fontsize";
 import Icon from "react-native-vector-icons/AntDesign";
 import {Button, Text} from "../../components/Common";
 
-const AboutBirdBrainScreen = ({onLogin, onBack, navigation}) => {
+const AboutBirdBrainScreen = ({onBack, navigation}) => {
   return (
     <View style={styles.container}>
       <View style={styles.content}>
@@ -26,7 +26,6 @@ const AboutBirdBrainScreen = ({onLogin, onBack, navigation}) => {
 
         <Button
           title="Login"
-          //   onPress={() => onLogin(email, password)}
           onPress={() => navigation.navigate("Login")}
           style={styles.loginButton}
         />
@@ -53,7 +52,6 @@ const AboutBirdBrainScreen = ({onLogin, onBack, navigation}) => {
 };
 
 AboutBirdBrainScreen.propTypes = {
-  onLogin: PropTypes.func.isRequired,
   onBack: PropTypes.func.isRequired,
 };
 

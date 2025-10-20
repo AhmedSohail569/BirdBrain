@@ -58,7 +58,7 @@ const Tab = ({state, descriptors, navigation}) => {
           const icons = {
             Home: isFocused ? "home" : "home-outline",
             Collection: isFocused ? "layers" : "layers-outline",
-            Add: "add",
+            Identify: "add",
             Explore: isFocused ? "compass" : "compass-outline",
             Settings: isFocused ? "settings" : "settings-outline",
           };
@@ -73,8 +73,8 @@ const Tab = ({state, descriptors, navigation}) => {
             }
           };
 
-          // 🔵 Handle Add Button
-          if (route.name === "Add") {
+          // 🔵 Handle Identify Button
+          if (route.name === "Identify") {
             return (
               <TouchableOpacity
                 key={route.key}
@@ -128,7 +128,7 @@ const Tab = ({state, descriptors, navigation}) => {
           style={styles.optionButton}
           onPress={() => {
             closeIdentifyModal();
-            navigation.navigate("IdentifyByPhoto"); // Replace with your actual screen name
+            navigation.navigate("IdentifyByPhotoScreen");
           }}>
           <Icon name="image-outline" size={22} color="#333" />
           <Text variant="medium" style={styles.optionText}>
@@ -140,7 +140,7 @@ const Tab = ({state, descriptors, navigation}) => {
           style={styles.optionButton}
           onPress={() => {
             closeIdentifyModal();
-            navigation.navigate("IdentifyBySound"); // Replace with your actual screen name
+            navigation.navigate("IdentifyByVoiceScreen");
           }}>
           <Icon name="mic-outline" size={22} color="#333" />
           <Text variant="medium" style={styles.optionText}>

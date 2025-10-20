@@ -5,7 +5,7 @@ import CustomTabBar from "~components/CustomTabBar";
 import {
   HomeStackNavigator,
   CollectionStackNavigator,
-  AddStackNavigator,
+  IdentifyStackNavigator,
   ExploreStackNavigator,
   SettingsStackNavigator,
 } from "./StackNavigator";
@@ -22,7 +22,7 @@ export default function BottomTabs() {
       screenOptions={{headerShown: false}}>
       <Tab.Screen name="Home" component={HomeStackNavigator} />
       <Tab.Screen name="Collection" component={CollectionStackNavigator} />
-      <Tab.Screen name="Add" component={AddStackNavigator} />
+      <Tab.Screen name="Identify" component={IdentifyStackNavigator} />
       <Tab.Screen name="Explore" component={ExploreStackNavigator} />
       <Tab.Screen name="Settings" component={SettingsStackNavigator} />
     </Tab.Navigator>

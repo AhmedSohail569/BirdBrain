@@ -21,4 +21,7 @@ export const Images = {
   songbirds: require("./images/collection/Songbirds.png"),
   bird1: require("./images/collection/bird1.png"),
   bird2: require("./images/collection/bird2.png"),
+  snapTip1: require("./images/identify/tips/Tip.png"),
+  snapTip2: require("./images/identify/tips/Tip1.png"),
+  snapTip3: require("./images/identify/tips/Tip2.png"),
 };

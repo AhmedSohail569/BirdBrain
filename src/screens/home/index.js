@@ -11,6 +11,7 @@ import LinearGradient from "react-native-linear-gradient";
 import {RFPercentage, RFValue} from "react-native-responsive-fontsize";
 import Icon from "react-native-vector-icons/Ionicons";
 import {Images} from "~assets";
+import AskBirdBrain from "~components/AskBirdBrain";
 import {ScrollView, Text} from "~components/Common";
 import Header from "~components/Header";
 
@@ -44,7 +45,10 @@ const HomeScreen = ({navigation}) => {
         {/* 🧠 Identify Buttons */}
         <View style={styles.identifyContainer}>
           {/* 1️⃣ Identify by Photo */}
-          <TouchableOpacity activeOpacity={0.9} style={styles.identifyWrapper}>
+          <TouchableOpacity
+            activeOpacity={0.9}
+            style={styles.identifyWrapper}
+            onPress={() => navigation.navigate("IdentifyByPhotoScreen")}>
             <LinearGradient
               colors={["#87CEEB", "#87CEEB"]}
               start={{x: 0, y: 0}}
@@ -56,7 +60,10 @@ const HomeScreen = ({navigation}) => {
           </TouchableOpacity>
 
           {/* 2️⃣ Identify by Sound */}
-          <TouchableOpacity activeOpacity={0.9} style={styles.identifyWrapper}>
+          <TouchableOpacity
+            activeOpacity={0.9}
+            style={styles.identifyWrapper}
+            onPress={() => navigation.navigate("IdentifyByVoiceScreen")}>
             <LinearGradient
               colors={["#4776E6", "#8E54E9"]}
               start={{x: 0, y: 0}}
@@ -69,7 +76,10 @@ const HomeScreen = ({navigation}) => {
 
           {/* 3️⃣ Birding Hotspots (solid color) */}
           {/* 3️⃣ Birding Hotspots */}
-          <TouchableOpacity activeOpacity={0.9} style={styles.identifyWrapper}>
+          <TouchableOpacity
+            activeOpacity={0.9}
+            style={styles.identifyWrapper}
+            onPress={() => {}}>
             <ImageBackground
               source={Images.hotspotHome}
               style={styles.identifyCard}
@@ -82,7 +92,10 @@ const HomeScreen = ({navigation}) => {
           </TouchableOpacity>
 
           {/* 4️⃣ Identify by Filtering */}
-          <TouchableOpacity activeOpacity={0.9} style={styles.identifyWrapper}>
+          <TouchableOpacity
+            activeOpacity={0.9}
+            style={styles.identifyWrapper}
+            onPress={() => navigation.navigate("IdentifyByFilteringScreen")}>
             <LinearGradient
               colors={["#2B5876", "#4E4376"]}
               start={{x: 0, y: 0}}
@@ -94,28 +107,7 @@ const HomeScreen = ({navigation}) => {
           </TouchableOpacity>
         </View>
 
-        {/* 💬 Ask BirdBrain */}
-        <TouchableOpacity style={styles.askContainer}>
-          <View
-            style={{backgroundColor: "#fff", padding: 12, borderRadius: 20}}>
-            <Icon name="chatbubble-outline" size={20} color="#000" />
-          </View>
-          <Text style={styles.askText}>
-            Ask{" "}
-            <Text style={{fontWeight: "700", color: "#fff"}}>BirdBrain</Text>{" "}
-            about your bird
-          </Text>
-          <View
-            style={{
-              backgroundColor: "#aee4f9",
-              padding: 6,
-              borderRadius: 20,
-              borderWidth: 1,
-              borderColor: "#fff",
-            }}>
-            <Icon name="arrow-forward" size={20} color="#fff" />
-          </View>
-        </TouchableOpacity>
+        <AskBirdBrain onPress={() => console.log("Ask BirdBrain pressed")} />
 
         {/* 📸 ProCapture Section */}
         <View style={styles.proContainer}>

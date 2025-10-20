@@ -4,14 +4,12 @@ import PropTypes from "prop-types";
 import Header from "../../../components/Header";
 import {Button, ScrollView, Text, TextInput} from "../../../components/Common";
 import {Images} from "../../../assets";
-import {RFPercentage, RFValue} from "react-native-responsive-fontsize";
-import {Checkbox} from "react-native-paper";
+import {RFPercentage} from "react-native-responsive-fontsize";
 
 const SignupScreen = ({onLogin, onBack, navigation}) => {
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [rememberMe, setRememberMe] = useState(false);
 
   return (
     <View style={styles.container}>
@@ -55,7 +53,7 @@ const SignupScreen = ({onLogin, onBack, navigation}) => {
 
           <Button
             title="Sign Up"
-            onPress={() => onLogin(email, password)}
+            onPress={() => navigation.navigate("App")}
             style={styles.loginButton}
           />
 
@@ -102,7 +100,6 @@ const styles = StyleSheet.create({
     paddingVertical: 40,
     borderTopRightRadius: RFPercentage(4),
     borderTopLeftRadius: RFPercentage(4),
-    marginHorizontal: 20,
     backgroundColor: "#FFFFFF",
   },
   header: {
@@ -113,19 +110,7 @@ const styles = StyleSheet.create({
   form: {
     marginBottom: 24,
   },
-  formOptions: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    marginTop: 16,
-  },
-  rememberButton: {
-    alignItems: "flex-start",
-    justifyContent: "flex-start",
-  },
-  forgotButton: {
-    marginLeft: 0,
-  },
+
   loginButton: {
     marginBottom: 24,
   },
@@ -146,25 +131,6 @@ const styles = StyleSheet.create({
   },
   socialButtons: {
     justifyContent: "center",
-  },
-  socialButton: {
-    marginHorizontal: 12,
-  },
-  signupPrompt: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center",
-    marginTop: RFValue(10),
-    marginBottom: RFValue(20),
-  },
-  promptText: {
-    color: "#333",
-    fontSize: 16,
-  },
-  signupButton: {
-    color: "#38BAEF",
-    fontSize: 16,
-    fontWeight: "500",
   },
 });
 

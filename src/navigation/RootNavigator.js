@@ -13,8 +13,8 @@ const RootNavigator = () => {
         screenOptions={{
           headerShown: false,
         }}>
-        <Stack.Screen name="App" component={AppNavigator} />
         <Stack.Screen name="Onboarding" component={OnboardingNavigator} />
+        <Stack.Screen name="App" component={AppNavigator} />
       </Stack.Navigator>
     </NavigationContainer>
   );

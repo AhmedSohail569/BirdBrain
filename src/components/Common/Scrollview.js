@@ -9,6 +9,7 @@ import {
   StyleSheet,
 } from "react-native";
 import PropTypes from "prop-types";
+import {RFValue} from "react-native-responsive-fontsize";
 
 const CustomScrollView = ({children, contentContainerStyle, style}) => {
   return (
@@ -42,7 +43,7 @@ const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
     // paddingVertical: 20,
-    paddingHorizontal: 16,
+    paddingHorizontal: RFValue(16),
   },
 });
 

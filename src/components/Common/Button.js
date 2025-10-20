@@ -10,10 +10,15 @@ import {RFValue} from "react-native-responsive-fontsize";
 const Button = ({
   onPress,
   title,
+  subText,
   variant = "primary",
   iconName,
   disabled = false,
+  left,
+  right,
   style,
+  textStyle,
+  subTextStyle,
 }) => {
   const theme = useAppTheme();
 
@@ -27,8 +32,10 @@ const Button = ({
           colors={theme.gradients?.primary || ["#87CEEB", "#38BAEF"]}
           start={{x: 0, y: 0}}
           end={{x: 1, y: 0}}
-          style={styles.gradientButton}>
-          <AppText style={[styles.text, styles.primaryText]}>{title}</AppText>
+          style={[styles.gradientButton, style]}>
+          <AppText style={[styles.text, styles.primaryText, textStyle]}>
+            {title}
+          </AppText>
         </LinearGradient>
       </TouchableOpacity>
     );
@@ -45,7 +52,26 @@ const Button = ({
         style,
       ]}>
       {variant === "social" && <Icon name={iconName} size={20} color="#000" />}
-      <AppText style={[styles.text, styles[`${variant}Text`]]}>{title}</AppText>
+      <View style={{flexDirection: "row", gap: 10, alignItems: "center"}}>
+        {left && left}
+        <View>
+          <AppText style={[styles.text, styles[`${variant}Text`], textStyle]}>
+            {title}
+          </AppText>
+          {subText && (
+            <AppText
+              style={[
+                styles.text,
+                styles[`${variant}SubText`],
+                subTextStyle,
+                {maxWidth: "70%"},
+              ]}>
+              {subText}
+            </AppText>
+          )}
+        </View>
+      </View>
+      {right && right}
     </TouchableOpacity>
   );
 };
@@ -97,6 +123,11 @@ const styles = StyleSheet.create({
     paddingHorizontal: 24,
     borderRadius: 12,
   },
+  section: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    backgroundColor: "#fff",
+  },
   disabled: {
     opacity: 0.5,
   },
@@ -116,6 +147,7 @@ const styles = StyleSheet.create({
   socialText: {
     color: "#333",
   },
+  sectionSubText: {color: "#737B98", fontWeight: "400", fontSize: RFValue(10)},
 });
 
 export default Button;

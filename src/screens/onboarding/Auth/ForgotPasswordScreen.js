@@ -71,7 +71,6 @@ const ForgotPasswordScreen = ({navigation}) => {
 };
 
 ForgotPasswordScreen.propTypes = {
-  onLogin: PropTypes.func.isRequired,
   onBack: PropTypes.func.isRequired,
 };
 

@@ -1,4 +1,10 @@
-import {View, StyleSheet, Image, ImageBackground} from "react-native";
+import {
+  View,
+  StyleSheet,
+  Image,
+  ImageBackground,
+  TouchableOpacity,
+} from "react-native";
 import PropTypes from "prop-types";
 
 import {Images} from "../../assets";
@@ -6,7 +12,7 @@ import {RFPercentage, RFValue} from "react-native-responsive-fontsize";
 import Icon from "react-native-vector-icons/AntDesign";
 import {Button, Text} from "../../components/Common";
 
-const GetStartedScreen = ({onLogin, onBack, navigation}) => {
+const GetStartedScreen = ({onBack, navigation}) => {
   return (
     <View style={styles.container}>
       <View style={styles.content}>
@@ -26,7 +32,6 @@ const GetStartedScreen = ({onLogin, onBack, navigation}) => {
 
         <Button
           title="Login"
-          //   onPress={() => onLogin(email, password)}
           onPress={() => navigation.navigate("Login")}
           style={styles.loginButton}
         />
@@ -38,14 +43,14 @@ const GetStartedScreen = ({onLogin, onBack, navigation}) => {
         </View>
 
         <View style={styles.socialButtons}>
-          <View style={styles.socialButton}>
+          <TouchableOpacity activeOpacity={0.8} style={styles.socialButton}>
             <Icon name="apple1" size={20} color="#000" />
             <Text variant="caption">Log in with Apple</Text>
-          </View>
-          <View style={styles.socialButton}>
+          </TouchableOpacity>
+          <TouchableOpacity activeOpacity={0.8} style={styles.socialButton}>
             <Icon name="google" size={20} color="#000" />
             <Text variant="caption">Log in with Google</Text>
-          </View>
+          </TouchableOpacity>
         </View>
       </View>
     </View>
@@ -53,7 +58,6 @@ const GetStartedScreen = ({onLogin, onBack, navigation}) => {
 };
 
 GetStartedScreen.propTypes = {
-  onLogin: PropTypes.func.isRequired,
   onBack: PropTypes.func.isRequired,
 };
 

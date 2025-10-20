@@ -11,17 +11,20 @@ import RootNavigator from "./navigation/RootNavigator";
 import AppLayout from "./containers/layouts/AppLayout";
 import {StatusBarProvider} from "./components/StatusBarProvider";
 import {PaperProvider} from "react-native-paper";
+import {GestureHandlerRootView} from "react-native-gesture-handler";
 
 function App() {
   return (
     <SafeAreaProvider>
-      <PaperProvider>
-        <StatusBarProvider>
-          <AppLayout>
-            <RootNavigator />
-          </AppLayout>
-        </StatusBarProvider>
-      </PaperProvider>
+      <GestureHandlerRootView>
+        <PaperProvider>
+          <StatusBarProvider>
+            <AppLayout>
+              <RootNavigator />
+            </AppLayout>
+          </StatusBarProvider>
+        </PaperProvider>
+      </GestureHandlerRootView>
     </SafeAreaProvider>
   );
 }

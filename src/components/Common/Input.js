@@ -9,6 +9,7 @@ const Input = ({
   onChangeText,
   placeholder,
   secureTextEntry,
+  dob,
   error,
   style,
   keyboardType,
@@ -40,6 +41,12 @@ const Input = ({
           secureTextEntry ? (
             <PaperInput.Icon
               icon={isPasswordVisible ? "eye-off" : "eye"}
+              onPress={togglePasswordVisibility}
+              color="#333"
+            />
+          ) : dob ? (
+            <PaperInput.Icon
+              icon={"calendar-outline"}
               onPress={togglePasswordVisibility}
               color="#333"
             />

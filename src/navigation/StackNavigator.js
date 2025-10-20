@@ -2,6 +2,7 @@ import {createStackNavigator} from "@react-navigation/stack";
 
 import HomeScreen from "~screens/home";
 import CollectionScreen from "~screens/collection";
+import SettingsScreen from "~screens/settings";
 
 const Stack = createStackNavigator();
 
@@ -29,14 +30,14 @@ export const CollectionStackNavigator = () => {
   );
 };
 
-export const AddStackNavigator = () => {
+export const IdentifyStackNavigator = () => {
   return (
     <Stack.Navigator>
-      <Stack.Screen
-        name="HomeScreen"
-        component={HomeScreen}
+      {/* <Stack.Screen
+        name="IdentifyByPhotoScreen"
+        component={ByPhotoScreen}
         options={{headerShown: false}}
-      />
+      /> */}
     </Stack.Navigator>
   );
 };
@@ -57,8 +58,8 @@ export const SettingsStackNavigator = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name="HomeScreen"
-        component={HomeScreen}
+        name="SettingsScreen"
+        component={SettingsScreen}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

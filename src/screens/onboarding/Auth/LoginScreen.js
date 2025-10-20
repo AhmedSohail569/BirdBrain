@@ -57,29 +57,18 @@ const LoginScreen = ({onLogin, onBack, navigation}) => {
                 Remember for 30 days
               </Text>
             </View>
-            {/* <Button
-              title="Remember for 30 days"
-              variant="textButton"
-              onPress={() => setRememberMe(!rememberMe)}
-              style={styles.rememberButton}
-            /> */}
+
             <Text
               style={{fontSize: 14, fontWeight: "500", color: "#333"}}
               onPress={() => navigation.navigate("ForgotPassword")}>
               Forgot Password?
             </Text>
-            {/* <Button
-              title="Forgot password?"
-              variant="textButton"
-              onPress={() => {}}
-              style={styles.forgotButton}
-            /> */}
           </View>
         </View>
 
         <Button
           title="Log in"
-          onPress={() => onLogin(email, password)}
+          onPress={() => navigation.navigate("App")}
           style={styles.loginButton}
         />
 
@@ -151,13 +140,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginTop: 16,
   },
-  rememberButton: {
-    alignItems: "flex-start",
-    justifyContent: "flex-start",
-  },
-  forgotButton: {
-    marginLeft: 0,
-  },
+
   loginButton: {
     marginBottom: 24,
   },
@@ -179,9 +162,7 @@ const styles = StyleSheet.create({
   socialButtons: {
     justifyContent: "center",
   },
-  socialButton: {
-    marginHorizontal: 12,
-  },
+
   signupPrompt: {
     flexDirection: "row",
     alignItems: "center",

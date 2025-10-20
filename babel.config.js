@@ -16,6 +16,7 @@ module.exports = {
           "~routes": "./src/routes",
           "~screens": "./src/screens",
           "~theme": "./src/theme",
+          "~utils": "./src/utils",
           "~services": "./src/services",
           "~styles": "./src/styles",
         },
